@@ -104,34 +104,41 @@ header .container {
   margin-left: auto; /* İletişim bilgilerini en sağa iter */
 }
 .hero-section {
-  background-color: #2e2f42;
-  /* Üst ve alt için 188px, yanlar için 0 (Container ortalayacak) */
-  padding: 188px 0;
+  /* Arka plan resmi ve karartma katmanı */
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7), 
+      rgba(46, 47, 66, 0.7)
+    ),
+    url("../images/people-office.jpg"); /* Resim yolunun doğruluğundan emin ol */
+  
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; /* Resmi alanı kaplayacak şekilde yayar */
+  width: 1440px;
+  padding: 188px 0; /* Figma'daki boşluklara göre ayarlandı */
+  max-width: 1440px;
+  margin: 0 auto; /* Büyük ekranlarda bölümü ortalar */
   text-align: center;
+  display: flex; /* İçeriği esnek kutu yapar */
+  align-items: center; /* Dikeyde ortalar */
+  justify-content: center; /* Yatayda ortalar */
 }
-
-.hero-section h1 {
+.hero-title {
   color: #ffffff;
   font-size: 56px;
-  font-weight: 700;
   line-height: 1.07;
   letter-spacing: 0.02em;
-  text-align: center;
-  /* Metnin Figma'daki gibi kırılması için genişliği sınırlıyoruz */
   max-width: 496px;
-  /* Ortalamak ve butonla arasına 48px boşluk bırakmak için */
-  margin: 0 auto 48px auto;
+  text-align: center;
+  margin-left: auto;   /* Yatayda ortalamanın garantisi */
+  margin-right: auto;  /* Yatayda ortalamanın garantisi */
+  margin-bottom: 48px; /* Butonu aşağı iten boşluk budur! */
 }
-
-.hero-section button {
-  display: block; /* margin: auto'nun çalışması için şart */
-  min-width: 169px;
+.hero-button {
   height: 56px;
   border: none;
   border-radius: 4px;
   margin: 0 auto; /* Butonu merkeze alır */
-  padding: 16px 32px;
-
   background-color: #4d5ae5;
   color: #ffffff;
   font-family: "Roboto", sans-serif;
@@ -142,10 +149,13 @@ header .container {
   cursor: pointer;
   /* Hover efekti için geçiş */
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;      /* Yanında bir şey istemiyoruz, tüm satırı sahiplensin */
+  padding: 16px 32px;
+  min-width: 169px;
+  /* Diğer renk ve border ayarların... */
 }
-
-.hero-section button:hover,
-.hero-section button:focus {
+.hero-button button:hover,
+.hero-button button:focus {
   background-color: #404bbf;
 }
 .container {
@@ -277,10 +287,10 @@ p {
   background-color: #ffffff;
   border-radius: 0px 0px 4px 4px; /* Sadece alt köşeleri yuvarlatır */
   box-shadow:
-    0px 1px 3px rgba(0, 0, 0, 0.12),
-    0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2); /* Figma'daki Drop Shadow */
-}
+  0px 2px 1px 0px rgba(46, 47, 66, 0.08), 
+  0px 1px 1px 0px rgba(46, 47, 66, 0.16), 
+  0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+  }
 
 /* Metinlerin olduğu iç kısım */
 .card-content {
@@ -331,7 +341,7 @@ p {
   width: calc((100% - 48px) / 3);
   background-color: #ffffff;
   border-radius: 0px 0px 4px 4px; /* Sadece alt köşeleri yuvarlatır */
-  box-shadow:
+ /* box-shadow:
     0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2); /* Figma'daki Drop Shadow */
@@ -344,9 +354,9 @@ p {
 }
 .portfolio-item:hover {
   box-shadow:
-    0px 1px 6px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16),
-    0px 2px 1px rgba(46, 47, 66, 0.08);
+    0px 2px 1px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 .portfolio-thumb {
   position: relative;
